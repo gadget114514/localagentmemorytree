@@ -51,6 +51,7 @@ Commands can be triggered via natural language or `/am-` slash commands.
 | `am-push` | `am-suspend` | "suspend", "push to stack" |
 | `am-pop` | `am-resume` | "resume", "pop from stack" |
 | `am-stack` | | "show stack", "stack contents" |
+| `am-build` | | "build from document", "build tree from file" |
 
 ## Storage Structure
 
