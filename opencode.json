@@ -1,5 +1,8 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "skills": {
+    "paths": [".agent/skills"]
+  },
   "command": {
     "am-save": {
       "description": "Save current conversation turn to memory",

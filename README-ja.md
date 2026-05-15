@@ -14,15 +14,9 @@ DB・外部ツール不要で**ファイル操作だけ**で完結する。
 
 ### opencode
 
-```bash
-# グローバルルール（全プロジェクトで有効）
-cp -r rules/opencode/localagentmemorytree.md ~/.config/opencode/rules/
+プロジェクトルートに `opencode.json` が配置されています — opencode が自動認識するため、追加のセットアップは不要です。
 
-# スラッシュコマンド（全プロジェクトで有効）
-cp commands/* ~/.config/opencode/commands/
-```
-
-またはプロジェクトルートの `AGENTS.md` に `AGENTS.md` の内容を追記。
+このディレクトリで opencode を起動すれば、すぐにスラッシュコマンド（`/am-save`、`/am-recall` 等）が使えます。
 
 ### Claude Code
 

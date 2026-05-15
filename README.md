@@ -14,11 +14,9 @@ No database or external tools required — works with **pure file operations**.
 
 ### opencode
 
-1. **Per-project setup (recommended)** — append the contents of `AGENTS.md` to your project's `AGENTS.md`. This project already includes the rules at the repository root.
-2. **Slash commands** — copy the command files to enable `/am-save`, `/am-recall`, etc.:
-   ```bash
-   cp skills/commands/* ~/.config/opencode/commands/
-   ```
+The project root includes `opencode.json` — auto-discovered by opencode, no setup needed.
+
+Slash commands (`/am-save`, `/am-recall`, etc.) work immediately when you launch opencode from this directory.
 
 ### Claude Code
 

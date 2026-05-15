@@ -1,3 +1,14 @@
+---
+name: localagentmemorytree
+description: |
+  Use when the user says "setup localagentmemorytree", "initialize memory tree",
+  "remember this", "save this", "remind me", "forget this", "show stack",
+  "current topic", "list all", "new topic", or any memory management request.
+  Manages project memory via .agent-memory/ directory with tree-structured
+  topics, save/recall/forget operations, stack-based context switching, and
+  automatic session restore.
+---
+
 # localagentmemorytree — Project Memory Management Skill
 
 The following rules are project-specific. In this project, file-based memory management via `.agent-memory/` is enabled.
@@ -7,6 +18,21 @@ The following rules are project-specific. In this project, file-based memory man
 ## Memory Root
 
 Use the `.agent-memory/` directory directly under the project root.
+
+---
+
+## am-setup — Initialize Memory Tree
+
+When the user says "setup localagentmemorytree", "initialize memory tree", "start memory system":
+
+1. Create `.agent-memory/` directory under the project root.
+2. Create `.agent-memory/000_Root/` directory.
+3. Create `.agent-memory/current_head.txt` with content `000_Root`.
+4. Create `.agent-memory/index.md` with a placeholder entry for Root.
+5. Create `.agent-memory/_stack.txt` as an empty file.
+6. Create `.agent-memory/000_Root/topic_summary.md` with initial purpose.
+7. Create `.agent-memory/000_Root/chat_history.jsonl` as an empty JSONL file.
+8. Inform the user that the memory tree has been initialized.
 
 ---
 
@@ -186,6 +212,7 @@ When the user says "list all", "show all", "what I remember":
 
 Automatically execute the following at conversation start:
 
-1. Read `.agent-memory/current_head.txt`.
-2. Read all `topic_summary.md` files along the path from root to the current node.
-3. Read the last 50 lines of the current node's `chat_history.jsonl`.
+1. Check if `.agent-memory/` exists. If not, ask "Would you like to initialize the memory tree?" and follow the `am-setup` steps if the user agrees.
+2. Read `.agent-memory/current_head.txt`.
+3. Read all `topic_summary.md` files along the path from root to the current node.
+4. Read the last 50 lines of the current node's `chat_history.jsonl`.
