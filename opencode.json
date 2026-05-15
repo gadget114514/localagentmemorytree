@@ -63,6 +63,10 @@
     "am-list-all": {
       "description": "List all memory topics with tree structure",
       "template": "list all"
+    },
+    "am-build": {
+      "description": "Build topic tree from a markdown document",
+      "template": "build from document {0}"
     }
   }
 }

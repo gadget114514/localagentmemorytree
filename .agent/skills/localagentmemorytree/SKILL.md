@@ -3,7 +3,7 @@ name: localagentmemorytree
 description: |
   Use when the user says "setup localagentmemorytree", "initialize memory tree",
   "remember this", "save this", "remind me", "forget this", "show stack",
-  "current topic", "list all", "new topic", or any memory management request.
+  "current topic", "list all", "new topic", "build from document", or any memory management request.
   Manages project memory via .agent-memory/ directory with tree-structured
   topics, save/recall/forget operations, stack-based context switching, and
   automatic session restore.
@@ -205,6 +205,22 @@ When the user says "list all", "show all", "what I remember":
 1. Read `.agent-memory/index.md` to get all nodes.
 2. Format and present while maintaining the tree structure.
 3. Also display the status of each node (in_progress / done / archived).
+
+---
+
+## am-build — Build Topic Tree from Document
+
+When the user says "build from document", "build tree from file":
+
+1. Confirm the file path with the user (accept as argument or ask).
+2. Read the markdown file.
+3. Parse all headings (`#`, `##`, `###`, etc.) to detect topic hierarchy.
+4. Starting from the current node, create child nodes for each top-level heading (`#`).
+5. Create sub-child nodes for each sub-heading (`##`, `###`) under the corresponding parent.
+6. For each new node, create `topic_summary.md` with the heading as title and purpose, and an empty `chat_history.jsonl`.
+7. Update `.agent-memory/index.md` with all new node entries.
+8. Set `current_head.txt` to the first created node.
+9. Inform the user of the built tree structure (number of nodes, hierarchy).
 
 ---
 
