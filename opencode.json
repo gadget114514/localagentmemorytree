@@ -1,0 +1,65 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "command": {
+    "am-save": {
+      "description": "Save current conversation turn to memory",
+      "template": "save this"
+    },
+    "am-recall": {
+      "description": "Recall memory about a topic",
+      "template": "remind me about {0}"
+    },
+    "am-set-topic": {
+      "description": "Set or rename the current topic label",
+      "template": "set topic name to {0}"
+    },
+    "am-forget": {
+      "description": "Delete current memory node",
+      "template": "forget this"
+    },
+    "am-stack": {
+      "description": "Show pending topic stack",
+      "template": "show stack"
+    },
+    "am-resume": {
+      "description": "Pop and restore topic from stack",
+      "template": "resume"
+    },
+    "am-suspend": {
+      "description": "Push current topic to stack and start a new one",
+      "template": "suspend, new topic: {0}"
+    },
+    "am-change-topic": {
+      "description": "Switch to a different topic",
+      "template": "move to {0}"
+    },
+    "am-list": {
+      "description": "List child topics of current node",
+      "template": "show children"
+    },
+    "am-up": {
+      "description": "Navigate to parent topic",
+      "template": "back to parent"
+    },
+    "am-remove-topic": {
+      "description": "Delete a specific topic",
+      "template": "remove topic {0}"
+    },
+    "am-move-topic": {
+      "description": "Move a topic under another topic",
+      "template": "move topic"
+    },
+    "am-make-topic": {
+      "description": "Create a new child topic",
+      "template": "new topic {0}"
+    },
+    "am-current": {
+      "description": "Show current topic details",
+      "template": "current topic"
+    },
+    "am-list-all": {
+      "description": "List all memory topics with tree structure",
+      "template": "list all"
+    }
+  }
+}
